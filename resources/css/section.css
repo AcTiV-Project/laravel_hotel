@@ -1,0 +1,290 @@
+.content{
+    width: 80%;
+    margin: auto;
+    padding: 30px;
+    background-color: #fff;
+    box-shadow: 0 6px 25px rgba(128, 128, 128, 0.22);
+}
+.frontpage {
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+.frontpage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Capa oscura sobre la imagen */
+.frontpage::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1;
+}
+
+/* Texto encima del overlay */
+.frontpage__text {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+
+    width: 40%;
+
+    z-index: 2;
+    color: white;
+}
+
+.frontpage__text h1 {
+    margin: 0;
+    font-size: 45px;
+    font-weight: 900;
+}
+
+.title2 {
+    color: #C2991A;
+}
+
+.frontpage__text p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+
+
+
+
+
+.cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.card{
+    width: 30%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(128, 128, 128, 0.3);
+    transition: ease 0.5s;
+}
+.card:hover{
+    transform: scale(1.05);
+}
+.card__image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.rooms h1{
+    text-align: center;
+    padding: 20px;
+}
+
+.card__icons{
+    list-style: none;
+    line-height: 1.7;
+    padding: 10px;
+}
+.card__price{
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.card__btn{
+    border-style: none;
+    padding: 10px 30px 10px;
+    background-color: #C2991A;
+    cursor: pointer;
+}
+.card__btn:hover{
+    transform: scale(1.05);
+}
+
+
+.card__icons {
+    list-style: none;
+    line-height: 1.8;
+    padding: 10px 20px;
+}
+
+.card__icons li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card__icons i {
+    width: 20px;
+    text-align: center;
+    color: #C2991A;
+}
+
+
+
+
+
+
+
+
+.reservations {
+    position: relative;
+    width: 100%;
+    min-height: 700px;
+    overflow: hidden;
+}
+
+.reservations img {
+    width: 100%;
+    height: 100%;
+    min-height: 700px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Formulario encima de la imagen */
+.myform {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: min(90%, 500px);
+    padding: 35px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    /* Blanco opaco/transparente */
+    background: rgba(255, 255, 255, 0.88);
+
+    border-radius: 15px;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+
+    backdrop-filter: blur(5px);
+}
+
+/* Labels */
+.myform label {
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+    margin-top: 5px;
+}
+
+/* Inputs y select */
+.myform input,
+.myform select {
+    width: 100%;
+    padding: 12px 14px;
+
+    border: 1px solid #ccc;
+    border-radius: 8px;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    font-size: 15px;
+    outline: none;
+
+    box-sizing: border-box;
+
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.myform input:focus,
+.myform select:focus {
+    border-color: #555;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
+}
+
+/* Botón */
+.myform input[type="submit"] {
+    margin-top: 15px;
+
+    width: 100%;
+    padding: 14px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #222;
+    color: white;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: background 0.2s, transform 0.2s;
+}
+
+.myform input[type="submit"]:hover {
+    background: #444;
+    transform: translateY(-2px);
+}
+
+.myform input[type="submit"]:active {
+    transform: translateY(0);
+}
+
+/* Mensaje */
+.myform .msg {
+    margin: 5px 0 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+
+    .reservations {
+        min-height: 800px;
+    }
+
+    .reservations img {
+        min-height: 800px;
+    }
+
+    .myform {
+        width: 85%;
+        padding: 25px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+@media(max-width: 900px){
+    .content{
+        width: 100%;
+    }
+
+    .cards{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    .card{
+        width: 80%;
+    }
+}

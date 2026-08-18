@@ -1,0 +1,42 @@
+.footer {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    padding: 50px;
+}
+
+.footer__card {
+    width: 25%;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.footer__card i {
+    font-size: 35px;
+    min-width: 50px;
+    color: #C2991A;
+    text-align: center;
+}
+
+.footer__article h1 {
+    margin: 0 0 10px;
+    font-size: 22px;
+}
+
+.footer__article p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+@media(max-width: 800px){
+    .footer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer__card{
+        width: 50%;
+    }
+}
