@@ -41,7 +41,21 @@
 
     <section class="section">
         <div class="reservations">
-            <img src="{{ asset('images/deluxe.png') }}" alt="images">
+            <img src="{{ asset('images/deluxe.png') }}" alt="Deluxe room">
+
+            <div class="reservations__message">
+                <span>YOUR STAY, YOUR MOMENT</span>
+
+                <h2>
+                    Make yourself<br>
+                    at home.
+                </h2>
+
+                <p>
+                    Relax, unwind and enjoy<br>
+                    every moment of your stay.
+                </p>
+            </div>
         </div>
 
         <form class="myform" action="" method="POST">
