@@ -1,7 +1,17 @@
-*{
-    padding: 0;
-    margin: 0;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
-html{
-    scroll-behavior: smooth;
+
+html,
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
 }

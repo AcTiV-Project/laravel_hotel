@@ -1,42 +1,133 @@
+/* ==============================
+   FOOTER
+============================== */
+
 .footer {
-    display: flex;
-    justify-content: space-around;
+    width: 100%;
+    padding: 70px 6%;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
-    padding: 50px;
+
+    background-color: #111;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
+
+
+/* ==============================
+   FOOTER CARD
+============================== */
 
 .footer__card {
-    width: 25%;
+    min-height: 180px;
+    padding: 30px 25px;
+
     display: flex;
-    align-items: flex-start;
-    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    transition: all 0.3s ease;
 }
 
-.footer__card i {
-    font-size: 35px;
-    min-width: 50px;
-    color: #C2991A;
-    text-align: center;
+
+/* Efecto hover */
+
+.footer__card:hover {
+    transform: translateY(-8px);
+
+    border-color: rgba(212, 175, 55, 0.5);
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ==============================
+   ICON
+============================== */
+
+.footer__card > i {
+    margin-bottom: 20px;
+
+    color: #d4af37;
+
+    font-size: 2rem;
+
+    transition: transform 0.3s ease;
+}
+
+.footer__card:hover > i {
+    transform: translateY(-5px);
+}
+
+
+/* ==============================
+   ARTICLE
+============================== */
+
+.footer__article {
+    max-width: 230px;
 }
 
 .footer__article h1 {
-    margin: 0 0 10px;
-    font-size: 22px;
+    margin: 0 0 12px;
+
+    color: #fff;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .footer__article p {
     margin: 0;
-    line-height: 1.6;
+
+    color: #999;
+
+    font-size: 0.85rem;
+    line-height: 1.7;
 }
 
-@media(max-width: 800px){
-    .footer{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+
+/* ==============================
+   TABLET
+============================== */
+
+@media screen and (max-width: 1000px) {
+
+    .footer {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 60px 5%;
     }
 
-    .footer__card{
-        width: 50%;
+}
+
+
+/* ==============================
+   MOBILE
+============================== */
+
+@media screen and (max-width: 600px) {
+
+    .footer {
+        grid-template-columns: 1fr;
+
+        padding: 50px 7%;
+
+        gap: 20px;
     }
+
+    .footer__card {
+        min-height: 160px;
+        padding: 30px 20px;
+    }
+
 }

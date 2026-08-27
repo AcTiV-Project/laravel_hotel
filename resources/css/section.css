@@ -1,58 +1,165 @@
-.content{
-    width: 80%;
-    margin: auto;
-    padding: 30px;
-    background-color: #fff;
-    box-shadow: 0 6px 25px rgba(128, 128, 128, 0.22);
-}
+/* =========================
+   FRONTPAGE
+========================= */
+
 .frontpage {
-    height: 400px;
     position: relative;
+
+    width: 100%;
+    height: 650px;
+
     overflow: hidden;
+
+    display: flex;
+    align-items: center;
 }
 
-.frontpage img {
+
+/* =========================
+   IMAGE
+========================= */
+
+.frontpage > img {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
     width: 100%;
     height: 100%;
+
     object-fit: cover;
-    display: block;
+    object-position: center;
+
+    z-index: 0;
 }
 
-/* Capa oscura sobre la imagen */
-.frontpage::after {
+
+/* =========================
+   DARK OVERLAY
+========================= */
+
+.frontpage::before {
     content: "";
+
     position: absolute;
+
     inset: 0;
-    background: rgba(0, 0, 0, 0.45);
+
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, .72) 0%,
+        rgba(0, 0, 0, .45) 45%,
+        rgba(0, 0, 0, .15) 100%
+    );
+
     z-index: 1;
 }
 
-/* Texto encima del overlay */
-.frontpage__text {
-    position: absolute;
-    top: 50%;
-    left: 10%;
-    transform: translateY(-50%);
 
-    width: 40%;
+/* =========================
+   TEXT
+========================= */
+
+.frontpage__text {
+    position: relative;
 
     z-index: 2;
-    color: white;
+
+    width: 90%;
+    max-width: 850px;
+
+    margin-left: 8%;
 }
 
-.frontpage__text h1 {
+
+.frontpage__text .title1 {
     margin: 0;
-    font-size: 45px;
-    font-weight: 900;
+
+    color: #fff;
+
+    font-size: clamp(2.5rem, 5vw, 4.8rem);
+
+    font-weight: 600;
+
+    line-height: 1.05;
+
+    letter-spacing: -1px;
 }
 
-.title2 {
-    color: #C2991A;
+
+.frontpage__text .title2 {
+    margin: 8px 0 0;
+
+    color: #d4af37;
+
+    font-size: clamp(2.5rem, 5vw, 4.8rem);
+
+    font-weight: 600;
+
+    font-style: italic;
+
+    line-height: 1;
 }
+
 
 .frontpage__text p {
-    font-size: 18px;
-    line-height: 1.6;
+    max-width: 500px;
+
+    margin: 25px 0 0;
+
+    color: rgba(255, 255, 255, .9);
+
+    font-size: 1.05rem;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .frontpage {
+        height: 600px;
+    }
+
+    .frontpage__text {
+        margin-left: 6%;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .frontpage {
+        height: 550px;
+    }
+
+    .frontpage__text {
+        width: 85%;
+
+        margin: 0 auto;
+    }
+
+    .frontpage__text .title1,
+    .frontpage__text .title2 {
+        font-size: 2.7rem;
+    }
+
+    .frontpage__text p {
+        margin-top: 20px;
+
+        font-size: .9rem;
+    }
+
 }
 
 
@@ -60,231 +167,262 @@
 
 
 
-.cards{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+
+/* =========================
+   ROOMS
+========================= */
+
+.rooms {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 100px 0 120px;
 }
 
-.card{
-    width: 30%;
-    border-radius: 15px;
+.rooms > h1 {
+    margin: 0 0 55px;
+
+    color: #222;
+
+    text-align: center;
+
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+
+/* Línea dorada */
+
+.rooms > h1::after {
+    content: "";
+
+    display: block;
+
+    width: 45px;
+    height: 2px;
+
+    margin: 15px auto 0;
+
+    background: #d4af37;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.cards {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 35px;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+    width: 100%;
+    min-width: 0;
+
+    background: #fff;
+
     overflow: hidden;
-    box-shadow: 0 8px 20px rgba(128, 128, 128, 0.3);
-    transition: ease 0.5s;
+
+    border: 1px solid #e5e5e5;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .07);
+
+    transition: transform .3s ease,
+                box-shadow .3s ease;
 }
-.card:hover{
-    transform: scale(1.05);
+
+.card:hover {
+    transform: translateY(-7px);
+
+    box-shadow: 0 18px 35px rgba(0, 0, 0, .12);
 }
-.card__image img{
+
+
+/* =========================
+   CARD IMAGE
+========================= */
+
+.card__image {
+    width: 100%;
+    height: 240px;
+
+    overflow: hidden;
+}
+
+.card__image img {
+    display: block;
+
     width: 100%;
     height: 100%;
+
     object-fit: cover;
+
+    transition: transform .4s ease;
 }
 
-.rooms h1{
-    text-align: center;
-    padding: 20px;
-}
-
-.card__icons{
-    list-style: none;
-    line-height: 1.7;
-    padding: 10px;
-}
-.card__price{
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-.card__btn{
-    border-style: none;
-    padding: 10px 30px 10px;
-    background-color: #C2991A;
-    cursor: pointer;
-}
-.card__btn:hover{
+.card:hover .card__image img {
     transform: scale(1.05);
 }
 
 
+/* =========================
+   CARD TITLE
+========================= */
+
+.card__title {
+    margin: 25px 25px 18px;
+
+    color: #222;
+
+    font-size: 1.3rem;
+}
+
+
+/* =========================
+   FEATURES
+========================= */
+
 .card__icons {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 13px;
+
+    margin: 0 25px;
+    padding: 0;
+
     list-style: none;
-    line-height: 1.8;
-    padding: 10px 20px;
 }
 
 .card__icons li {
     display: flex;
     align-items: center;
-    gap: 10px;
+
+    gap: 8px;
+
+    color: #666;
+
+    font-size: .82rem;
 }
 
 .card__icons i {
-    width: 20px;
+    color: #d4af37;
+
+    width: 16px;
+
     text-align: center;
-    color: #C2991A;
-}
-
-
-
-
-
-
-
-
-.reservations {
-    position: relative;
-    width: 100%;
-    min-height: 700px;
-    overflow: hidden;
-}
-
-.reservations img {
-    width: 100%;
-    height: 100%;
-    min-height: 700px;
-    object-fit: cover;
-    display: block;
-}
-
-/* Formulario encima de la imagen */
-.myform {
-    position: absolute;
-    top: 90%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    width: min(90%, 500px);
-    padding: 35px;
-
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-
-    /* Blanco opaco/transparente */
-    background: rgba(255, 255, 255, 0.88);
-
-    border-radius: 15px;
-
-    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
-
-    backdrop-filter: blur(5px);
-}
-
-/* Labels */
-.myform label {
-    font-size: 15px;
-    font-weight: 600;
-    color: #333;
-    margin-top: 5px;
-}
-
-/* Inputs y select */
-.myform input,
-.myform select {
-    width: 100%;
-    padding: 12px 14px;
-
-    border: 1px solid #ccc;
-    border-radius: 8px;
-
-    background: rgba(255, 255, 255, 0.95);
-
-    font-size: 15px;
-    outline: none;
-
-    box-sizing: border-box;
-
-    transition: border-color 0.2s, box-shadow 0.2s;
-}
-
-.myform input:focus,
-.myform select:focus {
-    border-color: #555;
-    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
-}
-
-/* Botón */
-.myform input[type="submit"] {
-    margin-top: 15px;
-
-    width: 100%;
-    padding: 14px;
-
-    border: none;
-    border-radius: 8px;
-
-    background: #222;
-    color: white;
-
-    font-size: 15px;
-    font-weight: bold;
-
-    cursor: pointer;
-
-    transition: background 0.2s, transform 0.2s;
-}
-
-.myform input[type="submit"]:hover {
-    background: #444;
-    transform: translateY(-2px);
-}
-
-.myform input[type="submit"]:active {
-    transform: translateY(0);
-}
-
-/* Mensaje */
-.myform .msg {
-    margin: 5px 0 0;
-    text-align: center;
-    font-size: 14px;
 }
 
 
 /* =========================
-   RESPONSIVE
+   PRICE
 ========================= */
 
-@media (max-width: 600px) {
+.card__price {
+    margin-top: 25px;
 
-    .reservations {
-        min-height: 800px;
+    padding: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+.card__price h3 {
+    margin: 0;
+
+    color: #222;
+
+    font-size: 1rem;
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.card__btn {
+    padding: 11px 18px;
+
+    color: #111;
+
+    background: #d4af37;
+
+    border: 1px solid #d4af37;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.card__btn:hover {
+    color: #d4af37;
+
+    background: #111;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .rooms {
+        padding: 80px 0 100px;
     }
 
-    .reservations img {
-        min-height: 800px;
-    }
+    .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
 
-    .myform {
-        width: 85%;
-        padding: 25px;
+        gap: 25px;
     }
 
 }
 
 
+/* =========================
+   MOBILE
+========================= */
 
+@media (max-width: 600px) {
 
+    .rooms {
+        width: 90%;
 
-
-
-
-
-@media(max-width: 900px){
-    .content{
-        width: 100%;
+        padding: 65px 0 80px;
     }
 
-    .cards{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
+    .rooms > h1 {
+        margin-bottom: 40px;
+
+        font-size: 2rem;
     }
-    .card{
-        width: 80%;
+
+    .cards {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
     }
+
 }

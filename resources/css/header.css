@@ -1,100 +1,264 @@
-.header {
-    position: relative;
+/* ==============================
+   HEADER
+============================== */
 
+.header {
+    width: 100%;
     height: 80px;
+    padding: 0 6%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: #111;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    position: relative;
+    z-index: 1000;
+}
+
+
+/* ==============================
+   LOGO
+============================== */
+
+.header__logo {
+    width: 45px;
+    height: 45px;
 
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
 
-    background-color: #000D42;
-}
-.header__logo i{
-    color: #C2991A;
-    font-size: 25px;
+    color: #d4af37;
+    font-size: 1.4rem;
+
+    border: 1px solid #d4af37;
+    border-radius: 50%;
+
+    transition: all 0.3s ease;
 }
 
-.hamburger {
-    display: none;
+.header__logo:hover {
+    background-color: #d4af37;
+    color: #111;
+    transform: rotate(-5deg);
 }
+
+
+/* ==============================
+   NAVIGATION
+============================== */
 
 .nav {
-    width: 50%;
+    margin-left: auto;
+    margin-right: 50px;
 }
 
 .nav__links {
-    list-style: none;
     display: flex;
-    justify-content: space-around;
+    align-items: center;
+    gap: 40px;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-.nav__links li a {
+.nav__links a {
+    position: relative;
+
+    color: #fff;
     text-decoration: none;
-    color: white;
-    font-weight: 800;
-    padding-bottom: 10px;
+
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+
+    transition: color 0.3s ease;
 }
 
-.nav__links li a:hover {
-    border-bottom: 2px solid #C2991A;
+
+/* Línea debajo del enlace */
+
+.nav__links a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+
+    width: 0;
+    height: 2px;
+
+    background-color: #d4af37;
+
+    transition: width 0.3s ease;
 }
+
+.nav__links a:hover {
+    color: #d4af37;
+}
+
+.nav__links a:hover::after {
+    width: 100%;
+}
+
+
+/* ==============================
+   RESERVE BUTTON
+============================== */
 
 .header__btn {
-    border-style: none;
-    padding: 10px 30px;
-    background-color: #C2991A;
-    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 130px;
+    height: 44px;
+
+    padding: 0 25px;
+
+    color: #111;
+    background-color: #d4af37;
+
     text-decoration: none;
-    color: black;
+
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+
+    border: 1px solid #d4af37;
+
+    transition: all 0.3s ease;
 }
 
 .header__btn:hover {
-    transform: scale(1.05);
+    background-color: transparent;
+    color: #d4af37;
 }
 
-@media (max-width: 600px) {
 
-    .hamburger {
-        display: block;
-        cursor: pointer;
-    }
+/* ==============================
+   HAMBURGER
+============================== */
 
-    .hamburger .line {
-        width: 30px;
-        height: 3px;
-        background: #fefefe;
-        margin: 6px 0;
-    }
+.hamburger {
+    display: none;
 
-    .header__btn {
-        display: none;
+    width: 30px;
+    height: 24px;
+
+    flex-direction: column;
+    justify-content: space-between;
+
+    cursor: pointer;
+}
+
+.hamburger .line {
+    width: 100%;
+    height: 2px;
+
+    background-color: #fff;
+
+    transition: all 0.3s ease;
+}
+
+
+/* ==============================
+   TABLET
+============================== */
+
+@media screen and (max-width: 900px) {
+
+    .header {
+        padding: 0 4%;
     }
 
     .nav {
-        position: absolute;
-
-        width: 100%;
-        height: 0;
-
-        top: 80px;
-        left: 0;
-
-        overflow: hidden;
-
-        transition: height 0.5s;
-        z-index: 2;
+        margin-right: 30px;
     }
 
     .nav__links {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
         gap: 25px;
-        padding: 30px 0;
+    }
+
+}
+
+
+/* ==============================
+   MOBILE
+============================== */
+
+@media screen and (max-width: 700px) {
+
+    .header {
+        height: 70px;
+        padding: 0 6%;
+    }
+
+    .header__logo {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .header__btn {
+        margin-left: auto;
+        margin-right: 25px;
+
+        min-width: auto;
+        height: 40px;
+
+        padding: 0 18px;
+
+        font-size: 0.7rem;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+}
+
+@media screen and (max-width: 700px) {
+
+    .nav {
+        display: none;
+
+        position: absolute;
+
+        top: 70px;
+        left: 0;
+
+        width: 100%;
+
+        padding: 25px 0;
+
+        background: #111;
     }
 
     .nav.active {
-        height: 200px;
-        background-color: #000D42;
+        display: block;
     }
+
+    .nav__links {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 25px;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
 }
