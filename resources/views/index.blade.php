@@ -44,15 +44,15 @@
 
             <div class="frontpage__text">
                 <h1 class="title1">
-                    Descansa. Relájate. Disfruta tu estadía
+                    Rest. Relax. Enjoy your stay.
                 </h1>
 
                 <h1 class="title2">
-                    con nosotros
+                    with us
                 </h1>
 
                 <p>
-                    Reserva fácil, rápida y segura en los mejores hoteles
+                    Easy, fast, and secure booking at the best hotels.
                 </p>
             </div>
         </div>
@@ -97,7 +97,7 @@
                     </ul>
 
                     <div class="card__price">
-                        <h3>125$ / Noche</h3>
+                        <h3>125$ / Evening</h3>
 
                         <button class="card__btn">Reserve</button>
                     </div>
@@ -138,7 +138,7 @@
                     </ul>
 
                     <div class="card__price">
-                        <h3>70$ / Noche</h3>
+                        <h3>70$ / Evening</h3>
 
                         <button class="card__btn">Reserve</button>
                     </div>
@@ -179,7 +179,7 @@
                     </ul>
 
                     <div class="card__price">
-                        <h3>200$ / Noche</h3>
+                        <h3>200$ / Evening</h3>
 
                         <button class="card__btn">Reserve</button>
                     </div>
