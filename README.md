@@ -53,3 +53,12 @@ This project demonstrates knowledge in backend web development with Laravel, rel
 # Author
 
 - Jorge Bernuil - Developer Full Stack
+
+
+# Home
+
+![page principal](public/images/capture#1.png)
+
+# Form of reservations of rooms
+
+![form](public/images/capture#2.png)
