@@ -57,8 +57,8 @@ This project demonstrates knowledge in backend web development with Laravel, rel
 
 # Home
 
-![page principal](public/images/capture#1.png)
+![pageprincipal](public/images/capture1.png)
 
 # Form of reservations of rooms
 
-![form](public/images/capture#2.png)
+![form](public/images/capture2.png)
